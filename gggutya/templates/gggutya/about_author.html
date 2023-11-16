@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block main %}
+<h1>Данные фрилансера:</h1>
+<ul>
+    <li><p>Имя: {{ name }}</p></li>
+    <li><p>Фамилия: {{ second_name }}</p></li>
+    <li><p>Возраст: {{ old }}</p></li>
+    <li><p>Пол: {{ sex }}</p></li>
+</ul>
+
+{% include 'helper.html' %}
+{% endblock main %}

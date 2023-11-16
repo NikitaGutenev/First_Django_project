@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <hr>
+    <div class="list">
+        <h2>Заказы: </h2>
+        <ul>
+            {% for i in deals %}
+            <li>
+                {% if i.status %}
+                <p>id: {{i.id}}  (Active)</p>
+                {% else %}
+                <p>id: {{i.id}}  (Done)</p>
+                {% endif %}
+    
+                <p>Заказчик: {{i.customer}}</p>
+                <p>Цена: {{i.price}}$</p>
+                <p>Описание: {{i.short_description}}</p>
+                <p><a href={% url "check_order" i.id %}>Подробнее</a></p>
+            </li>
+            {% if not forloop.last %}
+            <hr class="item">
+            {% endif %}
+            {% endfor%}
+        </ul>
+    </div>
+{% endblock main %}

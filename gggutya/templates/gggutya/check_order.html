@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1>Заказ №{{id}}</h1>
+<ul>
+    <li>
+        {% if status %}
+        <p>Статус: Active</p>
+        {% else %}
+        <p>Статус: Done</p>
+        {% endif %}
+        <p>Заказчик: {{customer}}</p>
+        <p>Цена: {{price}}$</p>
+        <p>Краткое описание: {{short_description}}</p>
+        <hr>
+        <p>Полное описание: <br>{{description}}</p>
+    </li>
+</ul>
+{% include 'helper.html' %}
+
+{% endblock main %}
