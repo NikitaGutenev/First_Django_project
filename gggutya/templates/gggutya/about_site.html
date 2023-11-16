@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
+{% load gggutya_tags %}
 
 {% block main %}
 
-<h1>Тут будет описание сайта</h1>
+{% ABOUT_SITE_TAG as about%}
+{% autoescape off %}
+{{about|linebreaks|truncatewords:37 }}
+{% endautoescape %}
 
 {% include 'helper.html' %}
 

@@ -40,8 +40,8 @@ def check_order(request, id):
     return render(request, "gggutya/check_order.html", context=data)
 
 
-def make_order(request):
-    data = set_data("Сделать заказ")
+def make_order(request, selected=0):
+    data = set_data("Сделать заказ", selected=selected)
     return render(request, "gggutya/make_order.html", context=data)
 
 

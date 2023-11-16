@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
+{% load gggutya_tags %}
 
 {% block main %}
 
 <h1>Тут вы сможете сделать заказ</h1>
+{% if selected == 0 or selected == None %}
+{% history_deals %}
+{% else %}
+{% history_deals selected %}
+{% endif %}
+
 {% include 'helper.html' %}
 
 {% endblock main %}
